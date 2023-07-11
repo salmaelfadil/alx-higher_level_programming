@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * listint_t -- inserts a number into a sorted
+ * insert_node -- inserts a number into a sorted
  * singly linked list
  *
  * @head: pointer to head of list
@@ -20,20 +20,18 @@ listint_t *insert_node(listint_t **head, int number)
 
 	new->n = number;
 
-	if (h == NULL)
+	if (h == NULL || h->n >= number)
 	{
+		new->next = h;
 		*head = new;
-		new->next = NULL;
-		return(new);
+		return (new);
 	}
-	while(h)
+	while (h && h->next && h->next->n < number)
 	{
 		h = h->next;
 	}
-	if (h->next == NULL)
-	{
-		h->next = new;
-		new->next = NULL;
-	}
+
+	h->next = new;
+	new->next = NULL;
 	return (new);
 }
