@@ -5,12 +5,12 @@ if __name__ == "__main__":
 
     if argc ==  1:
         print("0 arguments.")
+        return
     elif argc == 2:
         print("1 argument:")
-        print("1 : {}".format(sys.argv[1]))
     else:
-        print("{} arguments:".format(sys.argv))
-        i = 1
-        while i <= argc:
-            print("{} : {}".format(i, sys.argv[i]))
-            i += 1
+        print("{} arguments:".format(argc))
+    i = 1
+    while i <= argc:
+        print("{} : {}".format(i, sys.argv[i]))
+        i += 1
