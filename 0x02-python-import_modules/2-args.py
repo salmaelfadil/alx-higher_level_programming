@@ -5,6 +5,7 @@ if __name__ == "__main__":
     import sys
 
     argc = len(sys.argv)
+    i = 1
 
     if argc ==  1:
         print("0 arguments.")
@@ -12,7 +13,6 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print("{} arguments:".format(argc))
-    i = 1
-    while i <= argc:
+    while i < argc:
         print("{} : {}".format(i, sys.argv[i]))
         i += 1
