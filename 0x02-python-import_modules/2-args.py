@@ -13,6 +13,6 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print("{} arguments:".format(argc))
-    while i <= argc:
+    while i < argc:
         print("{} : {}".format(i, sys.argv[i]))
         i += 1
