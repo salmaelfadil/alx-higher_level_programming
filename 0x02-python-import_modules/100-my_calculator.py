@@ -13,5 +13,8 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     else:
-        print("{} {} = {}".format(int(sys.argv[1]), sys.argv[2], int(argv[3]), operators[sys.argv[2]](a,b))) 
+        a = int(sys.argv[1])
+        sym = sys.argv[2]
+        b = int(sys.argv[3])
+        print("{} {} {} = {}".format(a, sym, b, operators[sys.argv[2]](a,b))) 
 
