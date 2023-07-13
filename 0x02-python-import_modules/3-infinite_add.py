@@ -5,7 +5,14 @@ if __name__ == "__main__":
     argc = len(argv) - 1
     res = 0
 
-    for i in range(argc):
-        res += int(sys.argv[i + 1])
+    if argc == 0:
+        print("0")
 
-    print("{}".format(res))
+    else:
+        i = 1
+    
+        while i <= argc:
+            res += int(sys.argv[i])
+            i += 1 
+
+        print("{}".format(res))
