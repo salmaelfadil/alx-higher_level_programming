@@ -1,11 +1,13 @@
 #!/usr/bin/python3
+
 if __name__ == "__main__":
+
     import sys
+
     argc = len(sys.argv)
 
     if argc ==  1:
         print("0 arguments.")
-        return
     elif argc == 2:
         print("1 argument:")
     else:
