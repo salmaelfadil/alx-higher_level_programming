@@ -29,12 +29,10 @@ void reverse_list(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *list_dup = NULL, *list_s, *list_f, *tmp;
+	listint_t *list_dup = NULL, *list_s = *head, *list_f = *head, *tmp = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-
-	*list_s = *head, *list_f = *head, *tmp = *head;
 
 	while (1)
 	{
