@@ -7,53 +7,52 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *list_rev;
-	listint_t *current;
-	listint_t *mid_node;
-	size_t n = 0;
-	size_t i = 0;
+	listint_t *list_dup = NULL, *list_s, *list_f, *tmp;
 
-	if(*head == NULL || (*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	current = *head;
+	list_s = *head, list_f = *head, tmp = *head;
 
-	while (current)
+	while (1)
 	{
-		n++;
-		current = current->next;
+		list_f = list_f->next->next;
+		if (list_f == NULL)
+		{
+			list_dup = list_s->next;
+			break
+		}
+		if (list_f->next == NULL)
+		{
+			list_dup = list_s->next->next;
+			break;
+		}
+		list_s = list_s->nextl
 	}
-	current = *head;
-	for (; i < (n / 2) - 1; i++)
+	reverse_list(&list_dup);
+
+	while (list_dup && tmp)
 	{
-		current = current->next;
-	}
-	if ((n % 2) == 0 && curent->n != current->next->n)
-	{
-		return (0);
-	}
-	current = current->next->next;
-	list_rev = reverse_list(&current);
-	mid_node = list_rev;
-	current = *head;
-	while (list_rev)
-	{
-		if (current->n != rev->n)
+		if (tmp->n == list_dup->n)
+		{
+			list_dup = dup->next;
+			tmp = tmp->next;
+		}
+		else
 			return (0);
-		current = current->next;
-		rev_list = rev_list->next;
 	}
-	reverse_list(&mid_node);
+	if (list_dup == NULL)
+		return (1);
 
-	return (1);
+	return (0);
 }
 /**
  * reverse_list -- revereses an intlist
  * @head: double pointer to head of list
  *
- * Return: listint_t
+ * Return: nothing
  */
-listint_t *reverse_list(listint_t **head)
+void reverse_list(listint_t **head)
 {
 	listint_t *current = *head;
 	listint_t *prev = NULL;
@@ -67,6 +66,4 @@ listint_t *reverse_list(listint_t **head)
 		current = next;
 	}
 	*head = prev;
-
-	return (*head);
 }
