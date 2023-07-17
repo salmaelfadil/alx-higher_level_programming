@@ -29,7 +29,8 @@ void reverse_list(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *list_dup = NULL, *list_s, *list_f, *tmp;
+	listint_t *list_dup, *list_s, *list_f, *tmp;
+	list_dup = NULL;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
@@ -49,7 +50,7 @@ int is_palindrome(listint_t **head)
 			list_dup = list_s->next->next;
 			break;
 		}
-		list_s = list_s->nextl
+		list_s = list_s->next;
 	}
 	reverse_list(&list_dup);
 
