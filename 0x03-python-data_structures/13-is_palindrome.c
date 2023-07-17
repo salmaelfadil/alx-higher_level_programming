@@ -10,13 +10,14 @@ int is_palindrome(listint_t **head)
 	listint_t *list_rev;
 	listint_t *current;
 	listint_t *mid_node;
-	size_t n, i = 0;
+	size_t n = 0;
+	size_t i = 0;
 
-	if(!(*head) || !(*head)->next)
+	if(*head == NULL || (*head)->next == NULL)
 		return (1);
-	
+
 	current = *head;
-	
+
 	while (current)
 	{
 		n++;
@@ -43,6 +44,7 @@ int is_palindrome(listint_t **head)
 		rev_list = rev_list->next;
 	}
 	reverse_list(&mid_node);
+
 	return (1);
 }
 /**
