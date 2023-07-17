@@ -1,5 +1,27 @@
 #include "lists.h"
 /**
+ * reverse_listint - revereses an intlist
+ * @head: pointer to the head of the list
+ *
+ * Return: void
+ */
+void reverse_list(listint_t **head)
+{
+	listint_t *prv = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
+
+	while (current)
+	{
+		next = current->next;
+		current->next = prv;
+		prv = current;
+		current = next;
+	}
+
+	*head = prev;
+}
+/**
  * is_palindrome -- checks if a singly linked list is a palindrome
  * @head: double pointer to head of list
  *
@@ -20,7 +42,7 @@ int is_palindrome(listint_t **head)
 		if (list_f == NULL)
 		{
 			list_dup = list_s->next;
-			break
+			break;
 		}
 		if (list_f->next == NULL)
 		{
@@ -45,25 +67,4 @@ int is_palindrome(listint_t **head)
 		return (1);
 
 	return (0);
-}
-/**
- * reverse_list -- revereses an intlist
- * @head: double pointer to head of list
- *
- * Return: nothing
- */
-void reverse_list(listint_t **head)
-{
-	listint_t *current = *head;
-	listint_t *prev = NULL;
-	listint_t *next = NULL;
-
-	while (current)
-	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
-	}
-	*head = prev;
 }
