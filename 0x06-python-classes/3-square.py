@@ -6,7 +6,7 @@ class Square:
     """square class with init size and validation and area"""
 
     def __init__(self, size=0):
-        if type(size) != int:
+        if type(size) is int:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
@@ -14,4 +14,4 @@ class Square:
             self.__size = size
 
     def area(self):
-        return self.size ** 2
+        return self.__size ** 2
