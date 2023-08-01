@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""class square defines a square"""
+"""square class"""
 
-
-class Square:
-    """class square defines a square"""
+def Square:
+"""square class"""
 
     def __init__(self, size=0):
         self.__size = size
@@ -22,3 +21,10 @@ class Square:
 
     def area(self):
         return self.size ** 2
+
+    def my_print(self):
+        if self.__size == 0:
+            print()
+        for i in range(self.__size):
+            print("#" * self.__size)
+
