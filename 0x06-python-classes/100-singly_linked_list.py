@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """node of a singly linked list"""
 
+
+
 class Node:
+    """Node of a linkedlist"""
     def __init__(self, data, next_node=None):
         self.__data = data
         self.__next_node = next_node
@@ -28,6 +31,7 @@ class Node:
             self.__next_node = value
 
 class SinglyLinkedList:
+    """class of a singlylinked list"""
     def __init__(self):
         self.__head = None
 
