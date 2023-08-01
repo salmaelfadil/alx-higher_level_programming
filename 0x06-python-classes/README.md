@@ -1,1 +1,1 @@
-Object orientied programming
+Object Oriented Programming
