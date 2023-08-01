@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""square class"""
+"""square class defines a square"""
 
 def Square:
     """square class"""
@@ -20,7 +20,7 @@ def Square:
         self.__size = value
 
     def area(self):
-        return self.size ** 2
+        return self.__size ** 2
 
     def my_print(self):
         if self.__size == 0:
