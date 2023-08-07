@@ -4,7 +4,7 @@
 
 
 class Rectangle:
-    """Rectangle class."""
+    """Represent a Rectangle."""
     def __init__(self, width=0, height=0):
         """Initializes the rectagnle"""
         self.width = width
