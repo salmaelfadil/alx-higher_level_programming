@@ -4,7 +4,8 @@
 
 
 class Rectangle:
-    """Represent a Rectangle."""
+    """Represent a rectangle."""
+
     def __init__(self, width=0, height=0):
         """Initializes the rectagnle"""
         self.width = width
@@ -12,12 +13,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """ width getter method"""
+        """width getter method"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ width setter method """
+        """width setter method """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -26,7 +27,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ height getter method"""
+        """height getter method"""
         return self.__height
 
     @height.setter
