@@ -2,7 +2,6 @@
 """Defines a Rectangle class"""
 
 
-
 class Rectangle:
     """Rectangle class"""
     number_of_instances = 0
@@ -82,6 +81,7 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
+
     @classmethod
     def square(cls, size=0):
         """returns rectangle instance that is a square"""

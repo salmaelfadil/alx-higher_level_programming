@@ -2,7 +2,6 @@
 """Defines a Rectangle class"""
 
 
-
 class Rectangle:
     """Rectangle class"""
     number_of_instances = 0
