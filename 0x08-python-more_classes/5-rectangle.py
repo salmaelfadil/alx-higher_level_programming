@@ -61,3 +61,7 @@ class Rectangle:
     def __repr__(self):
         """returns a string representation of rectangle for reporoduction"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    if __del__(self):
+        """prints a string when an instance is deleted"""
+        print("Bye rectangle...")
