@@ -6,6 +6,7 @@
 class Rectangle:
     """Rectangle class"""
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initializes the rectagnle"""
@@ -29,7 +30,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ height getter method"""
+        """height getter method"""
         return self.__height
 
     @height.setter
@@ -58,7 +59,7 @@ class Rectangle:
             return ""
         r_str = ""
         for i in range(self.__height):
-            r_str += "#" * self.__width + '\n'
+            r_str += str(print_symbol) * self.__width + '\n'
         return r_str[:-1]
 
     def __repr__(self):
