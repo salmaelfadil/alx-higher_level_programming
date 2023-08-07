@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-empty rectangle class
+Defines empty Rectangle class
 """
 
 
