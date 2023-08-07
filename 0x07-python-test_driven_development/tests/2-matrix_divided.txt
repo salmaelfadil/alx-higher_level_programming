@@ -1,0 +1,62 @@
+==============================
+How to Use 2-matrix_divided.py
+==============================
+
+Matrix division function ``matrix_divided(matrix, div)``.
+
+Usage
+=====
+
+Importing the function from the module:
+>>> from alx-higher_level_programming.0x07-python-test_driven_development.2-matrix_divided import matrix_divided
+
+regular matrix
+::
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 33)
+[[0.03, 0.06, 0.09], [0.12, 0.15, 0.18]]
+
+regular matrix
+::
+>>> matrix_divided([[3, 6, 9],[12, 15, 18]], 3)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+larger div
+::
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 333)
+[[0.0, 0.01, 0.01], [0.01, 0.02, 0.02]]
+
+float matrix
+::
+>>> matrix_divided([[1.1, -2.2, 3.3], [4.4, 5.5, -6.6]], 3)
+[[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
+
+float div
+::
+>>> matrix_divided([[1.2, 2.2, 3.2], [4.2, 5.2, 6.2]], 1.2)
+[[1.0, 1.83, 2.67], [3.5, 4.33, 5.17]]
+
+Errors
+None
+::
+>>> matrix_divided(None, None)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+incorrect argument type
+::
+>>> matrix_divided({9, 8, 7}, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+different rows length
+::
+>>> matrix_divided([[1, 2, 3], [4, 8, 7, 9], [2]], 1.5)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+division by zero
+::
+>>> matrix_divided([[0, 1, 2], [3, 4, 5]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
