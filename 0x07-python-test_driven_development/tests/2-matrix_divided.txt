@@ -8,7 +8,7 @@ Usage
 =====
 
 Importing the function from the module:
->>> from alx-higher_level_programming.0x07-python-test_driven_development.2-matrix_divided import matrix_divided
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
 regular matrix
 ::
