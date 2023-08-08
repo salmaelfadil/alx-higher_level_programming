@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """function print_square prints a square with size provided"""
 
+
 def print_square(size):
     """
     prints a square using '#' depending on size provided

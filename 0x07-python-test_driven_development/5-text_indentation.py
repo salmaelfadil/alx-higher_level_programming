@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """text_indentation function prints two lines after '.' '?' and ':'"""
 
+
 def text_indentation(text):
     """
     Args:
