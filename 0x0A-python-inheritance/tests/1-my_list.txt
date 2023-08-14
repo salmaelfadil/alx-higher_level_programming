@@ -1,0 +1,43 @@
+========================
+The ``1-my_list`` module
+========================
+
+Usage
+======
+
+>>> MyList = __import__("1-my_list").MyList
+
+Empty list
+::
+>>> l = MyList()
+>>> l.print_sorted()
+[]
+
+List in ascending order
+::
+>>> l.append(0)
+>>> l.append(1)
+>>> l.append(2)
+>>> l.append(3)
+>>> print(l)
+[0, 1, 2, 3]
+
+::
+>>> l.print_sorted()
+[0, 1, 2, 3]
+
+List not in order
+::
+>>> l = MyList()
+>>> l.append(1)
+>>> l.append(3)
+>>> l.append(0)
+>>> l.append(2)
+>>> l.print_sorted()
+[0, 1, 2, 3]
+
+Negative numbers:
+>>> l.append(-1)
+>>> l.append(-2)
+>>> l.print_sorted()
+[-2, -1, 0, 1, 2, 3]
