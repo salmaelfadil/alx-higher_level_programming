@@ -39,7 +39,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """getter method for x"""
@@ -76,3 +76,9 @@ class Rectangle(Base):
         """displays a rectangle using '#'"""
         for _ in range(self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        """overrides the __Str__ method"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.x, self.y,
+                self.width, self.height)
