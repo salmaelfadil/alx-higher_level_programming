@@ -34,3 +34,15 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """dictionary with attributes of square"""
+        attrs = ['id', 'size', 'x', 'y']
+        sq_dict = {}
+        
+        for attr in attrs:
+            if attr == 'size':
+                sq_dict[attr] = getattr(self, 'width')
+            else:
+                sq_dict[attr] = getattr(self, attr)
+        return sq_dict
