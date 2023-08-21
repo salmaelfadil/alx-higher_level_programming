@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Base class"""
 import json
-
+import csv
+import os.path
 
 class Base:
     """defines a base class"""
@@ -14,7 +15,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    @static.method
+    @staticmethod
     def to_json_string(list_dictionaries):
         """returns json string representation of dicts"""
         if list_dictionaries is None or list_dictionaries == "[]":
@@ -35,3 +36,10 @@ class Base:
 
         with open(filename, 'w') as file:
             file.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation"""
+        if not json_string:
+            return []
+        return json.loads(json_string)
