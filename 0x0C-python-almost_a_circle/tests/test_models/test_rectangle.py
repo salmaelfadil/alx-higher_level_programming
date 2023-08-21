@@ -49,3 +49,8 @@ class TestRectangle(unittest.TestCase):
         """test with 0 args passed"""
         with self.assertRaises(TypeError):
             r = Rectangle()
+
+    def test_area(self):
+        """area test """
+        r = Rectangle(5, 6)
+        self.assertEqual(r.area(), 30)
