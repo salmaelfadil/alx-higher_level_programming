@@ -3,7 +3,6 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-from unittest.mock import patch
 
 class TestBaseMethods(unittest.TestCase):
     """test base class"""
