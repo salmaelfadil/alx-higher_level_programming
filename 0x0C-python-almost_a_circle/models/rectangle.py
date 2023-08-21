@@ -74,11 +74,12 @@ class Rectangle(Base):
 
     def display(self):
         """displays a rectangle using '#'"""
+        for _ in range(self.__y):
+            print()
         for _ in range(self.__height):
             print('#' * self.__width)
 
     def __str__(self):
         """overrides the __Str__ method"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                self.x, self.y,
-                self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
