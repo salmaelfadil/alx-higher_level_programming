@@ -101,6 +101,6 @@ class Rectangle(Base):
         rec_dict = {}
 
         for attr in attrs:
-            dict_res[key] = getattr(self, key)
+            rec_dict[key] = getattr(self, key)
 
         return rec_dict
