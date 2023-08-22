@@ -14,16 +14,16 @@ class TestBaseMethods(unittest.TestCase):
 
     def test_repeated_it(self):
         """test repeated ids"""
-        b1 = Base()
+        b1 = Base(1)
         b2 = Base()
         b3 = Base(2)
         b4 = Base(5)
-        b5 = base()
+        b5 = Base()
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 2)
         self.assertEqual(b4.id, 5)
-        self.asserEqual(b5.id, 3)
+        self.assertEqual(b5.id, 3)
 
     def test_string_id(self):
         """test string id"""
@@ -40,3 +40,18 @@ class TestBaseMethods(unittest.TestCase):
         b = Base()
         with self.assertRaises(AttributeError):
             b.__nb_objects
+
+    def test_to_json_string(self):
+        """Test converting a list of dictionaries to JSON string"""
+        dictionary_list = [{'id': 1, 'name': 'Alice'}, {'id': 2, 'name': 'Bob'}]
+        json_string = Base.to_json_string(dictionary_list)
+        self.assertEqual(json_string, '[{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]')
+
+    def test_from_json_string(self):
+        """Test converting a JSON string to a list of dictionaries"""
+        json_string = '[{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]'
+        dictionary_list = Base.from_json_string(json_string)
+        self.assertEqual(len(dictionary_list), 2)
+        self.assertEqual(dictionary_list[0]['name'], 'Alice')
+        self.assertEqual(dictionary_list[1]['name'], 'Bob')
+

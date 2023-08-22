@@ -3,6 +3,9 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from io import StringIO
+from unittest import TestCase
+from unittest.mock import patch
 
 
 class TestRectangle(unittest.TestCase):
@@ -20,6 +23,28 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
         self.assertEqual(r1.id, 1)
+
+    def test_width_property(self):
+        """Test the width property of Rectangle"""
+        instance = Rectangle(5, 10)
+        self.assertEqual(instance.width, 5)
+
+    def test_height_property(self):
+        """Test the height property of Rectangle"""
+        instance = Rectangle(5, 10)
+        self.assertEqual(instance.height, 10)
+
+    def test_width_setter(self):
+        """Test the width setter of Rectangle"""
+        instance = Rectangle(5, 10)
+        instance.width = 20
+        self.assertEqual(instance.width, 20)
+
+    def test_height_setter(self):
+        """Test the height setter of Rectangle"""
+        instance = Rectangle(5, 10)
+        instance.height = 15
+        self.assertEqual(instance.height, 15)
 
     def test_None_width(self):
         """test with no width"""
@@ -54,3 +79,35 @@ class TestRectangle(unittest.TestCase):
         """area test """
         r = Rectangle(5, 6)
         self.assertEqual(r.area(), 30)
+    
+    def test_to_dictionary_method(self):
+        """Test the to_dictionary method of Rectangle"""
+        instance = Rectangle(5, 10, id=1, x=2, y=3)
+        dictionary = instance.to_dictionary()
+        self.assertEqual(dictionary, {id: 1, width: 5, height: 10, x: 2, y: 3})
+
+    def test_display_method(self):
+        """Test the display method of Rectangle"""
+        r1 = Rectangle(2, 5)
+        res = "##\n##\n##\n##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_to_dictionary_method(self):
+        """Test the to_dictionary method of Rectangle"""
+        instance = Rectangle(5, 10, id=1, x=2, y=3)
+        dictionary = instance.to_dictionary()
+        self.assertEqual(dictionary, {'id': 1, 'width': 5, 'height': 10, 'x': 2, 'y': 3})
+
+    def test_dict_to_json(self):
+        """Test dictrionary to JSON string"""
+        new = Rectangle(2, 2)
+        dictionary = new.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        res = "[{}]\n".format(dictionary.__str__())
+
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(json_dictionary)
+            self.assertEqual(str_out.getvalue(), res.replace("'", "\""))
+
