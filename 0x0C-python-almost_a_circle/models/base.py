@@ -4,6 +4,7 @@ import json
 import csv
 import os.path
 
+
 class Base:
     """defines a base class"""
     __nb_objects = 0
@@ -43,3 +44,31 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """creeates an instance"""
+        if cls.__name__ == "Rectangle":
+            new = cls(10, 10)
+        else:
+            new = cls(10)
+        new.update(**dictionary)
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        """returns all instances"""
+        filename = "{}.json".format(cls.__name__)
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, 'r') as f:
+            list_str = f.read()
+
+        list_cls = cls.from_json_string(list_str)
+        list_ins = []
+
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+
+        return list_ins
