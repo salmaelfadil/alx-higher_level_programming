@@ -22,8 +22,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """overrides the __str__ method"""
-        return "[Square] ({}) {}/{} - {}".format(self.id,
-                self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """updates attributes"""
@@ -39,7 +39,6 @@ class Square(Rectangle):
         """dictionary with attributes of square"""
         attrs = ['id', 'size', 'x', 'y']
         sq_dict = {}
-        
         for attr in attrs:
             if attr == 'size':
                 sq_dict[attr] = getattr(self, 'width')
