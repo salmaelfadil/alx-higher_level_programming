@@ -6,8 +6,9 @@ class Square extends Parent {
 			this.print();
 		}
 		else {
-			for (let i = 0; i < this.height; i++)
-				 console.log(c.repeat(this.width)
+			for (let i = 0; i < this.height; i++) {
+				 console.log(c.repeat(this.width));
+			}
 		}
 	}
 };
