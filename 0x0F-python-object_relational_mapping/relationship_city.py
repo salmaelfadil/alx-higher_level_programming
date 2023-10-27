@@ -6,6 +6,7 @@ from model_state import Base, State
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy
 
+
 class City(Base):
     """class with name and id attributes"""
     __tablename__ = 'cities'
