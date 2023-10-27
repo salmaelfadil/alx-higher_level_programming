@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-python file that contains the class definition of a City
+"""python file that contains the class definition of a City
 """
 from sqlalchemy import Column, Integer, String, MetaData
 from model_state import Base
