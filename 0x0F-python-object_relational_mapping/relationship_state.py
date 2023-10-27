@@ -5,6 +5,8 @@ and an instance Base = declarative_base():
 """
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+import sqlalchemy
 
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
