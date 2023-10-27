@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """python file that contains the class definition of a City
 """
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
 from sqlalchemy.ext.declarative import declarative_base
 
