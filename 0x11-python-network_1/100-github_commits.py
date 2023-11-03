@@ -2,7 +2,6 @@
 """takes your GitHub credentials and uses GitHub API to commits"""
 import sys
 import requests
-from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
     repo = sys.argv[1]
@@ -15,8 +14,9 @@ if __name__ == "__main__":
     comm = request.json()
 
     try:
-        for i in range(10):
-            print("{}: {}".format(comm[i].get("sha"),
-                comm[i].get("author").get("name")))
+        for i in comm[:10]:
+            sha = i['sha']
+            n = i['commit']['author']['name']
+            print("{}: {}".format(sha, n))
     except IndexError:
         pass
